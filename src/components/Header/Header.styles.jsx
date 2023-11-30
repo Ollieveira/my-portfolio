@@ -7,12 +7,7 @@ const HeaderStyle = styled.header`
   width: 100%;
   height: 100px;
   background-color: #333;
-  color: #fff;
-
-  & a {
-    text-decoration: none;
-    color: inherit;
-  }
+  color: #fff;  
 `
 
 export default HeaderStyle
