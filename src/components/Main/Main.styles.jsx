@@ -6,6 +6,6 @@ export const MainStyle = styled.main`
   align-items: center;
   gap: 20px;
   background-color: #333;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 `
