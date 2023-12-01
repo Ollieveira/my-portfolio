@@ -7,6 +7,7 @@ export const InicioStyle = styled.section`
   justify-content: space-evenly;
   color: #fff;
   margin-top: 100px;
+  scroll-margin-top: 100px;
 
   & p:nth-child(1) {
     font-size: 2.25rem;
