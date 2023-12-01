@@ -4,7 +4,9 @@ import { WrapperStyle } from '../../styles/WrapperStyles'
 import Navbar from '../Navbar'
 
 const Header = () => {
-  const logo = { text: 'Willys Oliveira | Desenvolvedor FrontEnd' }
+  const logo = {
+    text: 'Willys Oliveira | Desenvolvedor FrontEnd'
+  }
   const menuItems = [
     { link: '#home', text: 'Inicio' },
     { link: '#about', text: 'Sobre' },
