@@ -50,52 +50,71 @@ const CardText = styled.div`
   }
 `
 
-const Card = ({ data }) => {
+const Card = ({ type, dataProject, data }) => {
   return (
     <>
-      {data.map(item => (
-        <CardWrapper>
-          <h2>{item.title}</h2>
+      {type === 'sobre' &&
+        data.map(item => (
+          <CardWrapper>
+            <h2>{item.title}</h2>
+            <CardStyle>
+              {item.cursos &&
+                item.cursos.map(curso => (
+                  <CardItem>
+                    <CardText>
+                      <p>{curso.nome}</p>
+                      <p>{curso.periodo}</p>
+                    </CardText>
+                    <Image
+                      src={curso.icon}
+                      alt="icone-curso"
+                      width={82}
+                      height={57}
+                    />
+                  </CardItem>
+                ))}
+              {item.habilidades &&
+                item.habilidades.map(habilidade => (
+                  <CardItem>
+                    <FontAwesomeIcon
+                      style={{ fontSize: 30, marginRight: 10 }}
+                      icon={habilidade.icon}
+                    />
+                    <CardText>
+                      <p>{habilidade.nome}</p>
+                    </CardText>
+                  </CardItem>
+                ))}
+              {item.empresas &&
+                item.empresas.map(empresa => (
+                  <CardItem>
+                    <CardText>
+                      <p>{empresa.nome}</p>
+                      <p>{empresa.periodo}</p>
+                    </CardText>
+                  </CardItem>
+                ))}
+            </CardStyle>
+          </CardWrapper>
+        ))}
+      {type === 'projetos' &&
+        dataProject.map(item => (
           <CardStyle>
-            {item.cursos &&
-              item.cursos.map(curso => (
-                <CardItem>
-                  <CardText>
-                    <p>{curso.nome}</p>
-                    <p>{curso.periodo}</p>
-                  </CardText>
-                  <Image
-                    src={curso.icon}
-                    alt="icone-curso"
-                    width={82}
-                    height={57}
-                  />
-                </CardItem>
+            <CardText>
+              <p>{item.title}</p>
+              <p>{item.description}</p>
+              {item.techs.map(tech => (
+                <span>{tech}</span>
               ))}
-            {item.habilidades &&
-              item.habilidades.map(habilidade => (
-                <CardItem>
-                  <FontAwesomeIcon
-                    style={{ fontSize: 30, marginRight: 10 }}
-                    icon={habilidade.icon}
-                  />
-                  <CardText>
-                    <p>{habilidade.nome}</p>
-                  </CardText>
-                </CardItem>
-              ))}
-            {item.empresas &&
-              item.empresas.map(empresa => (
-                <CardItem>
-                  <CardText>
-                    <p>{empresa.nome}</p>
-                    <p>{empresa.periodo}</p>
-                  </CardText>
-                </CardItem>
-              ))}
+              <a href={item.github} target="_blank" rel="noopener noreferrer">
+                Github Project
+              </a>
+              <a href={item.homepage} target="_blank" rel="noopener noreferrer">
+                Vejo o Projeto aqui!
+              </a>
+            </CardText>
           </CardStyle>
-        </CardWrapper>
-      ))}
+        ))}
     </>
   )
 }

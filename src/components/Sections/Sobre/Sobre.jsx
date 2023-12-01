@@ -70,7 +70,7 @@ const Sobre = () => {
   ]
   return (
     <SobreStyle id="about">
-      <Card data={data}></Card>
+      <Card type="sobre" data={data}></Card>
     </SobreStyle>
   )
 }
