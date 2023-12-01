@@ -25,6 +25,7 @@ const Projetos = () => {
   }, [])
   return (
     <ProjetosStyle id="projects">
+      <h2>Projetos</h2>
       <Card type="projetos" dataProject={dataProject}></Card>
     </ProjetosStyle>
   )
