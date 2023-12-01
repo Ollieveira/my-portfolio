@@ -46,7 +46,6 @@ const CardItem = styled.div`
     color: #000;
     margin-top: 60px;
     width: 90%;
-    border: 1px solid red;
   }
 
   &.card-projeto {
