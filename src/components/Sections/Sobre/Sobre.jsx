@@ -69,7 +69,7 @@ const Sobre = () => {
     }
   ]
   return (
-    <SobreStyle>
+    <SobreStyle id="about">
       <Card data={data}></Card>
     </SobreStyle>
   )

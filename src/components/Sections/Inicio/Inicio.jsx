@@ -14,7 +14,7 @@ const Inicio = () => {
     { link: 'https://github.com/Ollieveira', icon: faGithub }
   ]
   return (
-    <InicioStyle id="#home">
+    <InicioStyle id="home">
       <Image
         src="src\assets\perfil.png"
         alt="Imagem-de-Perfil"

@@ -22,7 +22,7 @@ const SocialMedia = ({ socialIcons }) => {
     <SocialMediaWrapper>
       {socialIcons.map(item => (
         <SocialIcon href={item.link} target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon style={{ fontSize: 30 }} icon={item.icon} />
+        <FontAwesomeIcon style={{ fontSize: 30 }} icon={item.icon} />
         </SocialIcon>
       ))}
     </SocialMediaWrapper>

@@ -23,16 +23,18 @@ const NavLink = styled.a`
   text-decoration: none;
   color: #b3b3b3;
   font-weight: bold;
+  transition: color 0.3s ease-in-out;
   &:hover {
     text-decoration: underline;
+    color: #fff;
   }
 `
-const Navbar = ({logo, menuItems}) => {
+const Navbar = ({ logo, menuItems }) => {
   return (
     <NavbarWrapper>
       <NavLogo>{logo.text}</NavLogo>
       <NavMenu>
-        {menuItems.map((item) => (
+        {menuItems.map(item => (
           <NavItem>
             <NavLink href={item.link}>{item.text}</NavLink>
           </NavItem>
