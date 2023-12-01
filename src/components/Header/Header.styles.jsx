@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
-const HeaderStyle = styled.header`  
+const HeaderStyle = styled.header`
+  position: fixed;
+  z-index: 99;
   display: flex;
   justify-content: center;
   align-items: center;

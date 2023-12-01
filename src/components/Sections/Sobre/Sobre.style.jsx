@@ -5,6 +5,5 @@ export const SobreStyle = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: #fff;
-  border: 1px solid red;  
+  color: #fff;  
   `
