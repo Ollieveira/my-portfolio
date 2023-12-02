@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Image from './Image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const CardWrapper = styled.div`
   display: flex;
@@ -29,12 +30,36 @@ const CardStyle = styled.div`
   }
 
   &.card-projeto {
-    justify-content: flex-end;
-    gap: 0.5rem;
-    padding: 60px 30px;
+    justify-content: flex-start;
+    gap: 0.8rem;
+    padding: 30px;
     width: 360px;
     height: 460px;
     margin-bottom: 20px;
+  }
+
+  &.card-projeto img {
+    border-radius: 30px;
+  }
+
+  &.card-projeto .homepage-link {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+
+  &.card-projeto .homepage-link:hover {
+    color: #007bff;
+  }
+
+  &.card-projeto .github-icon-link {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+
+  &.card-projeto .github-icon-link:hover {
+    color: #0366d6;
   }
 `
 const CardItem = styled.div`
@@ -51,7 +76,6 @@ const CardItem = styled.div`
   &.card-projeto {
     flex-wrap: wrap;
     gap: 0.3rem;
-    border: 1px solid blue;
   }
 `
 const CardText = styled.div`
@@ -74,7 +98,7 @@ const CardText = styled.div`
   }
 `
 
-const Card = ({ type, dataProject, data }) => {
+const Card = ({ imgProject, type, dataProject, data }) => {
   const cardClass = type === 'sobre' ? 'card-sobre' : 'card-projeto'
   return (
     <>
@@ -123,8 +147,16 @@ const Card = ({ type, dataProject, data }) => {
           </CardWrapper>
         ))}
       {type === 'projetos' &&
-        dataProject.map(item => (
+        dataProject.map((item, index) => (
           <CardStyle className={cardClass}>
+            {imgProject[index] && (
+              <Image
+                src={`src/assets/${imgProject[index]}`}
+                alt={`img-project-${index}`}
+                width={296}
+                height={160}
+              />
+            )}
             <CardText className={cardClass}>
               <p>{item.title}</p>
               <p>{item.description}</p>
@@ -134,14 +166,24 @@ const Card = ({ type, dataProject, data }) => {
                 <p>#{tech}</p>
               ))}
             </CardItem>
-            {item.github && (
-              <a href={item.github} target="_blank" rel="noopener noreferrer">
-                Github Project
+            {item.homepage && (
+              <a
+                href={item.homepage}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="homepage-link"
+              >
+                Veja o Projeto aqui!
               </a>
             )}
-            {item.homepage && (
-              <a href={item.homepage} target="_blank" rel="noopener noreferrer">
-                Veja o Projeto aqui!
+            {item.github && (
+              <a
+                href={item.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="github-icon-link"
+              >
+                <FontAwesomeIcon style={{ fontSize: 30 }} icon={faGithub} />
               </a>
             )}
           </CardStyle>

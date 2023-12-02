@@ -5,6 +5,18 @@ import { ProjetosStyle } from './Projetos.style'
 import Card from '../../Card'
 
 const Projetos = () => {
+  const imgProject = [
+    'calculator-react-project-img.png',
+    'final-challenge-vnw-img.png',
+    'Mapadev-Week-img.png',
+    'Maratona-Explorer-img.png',
+    '' || "Not a Image",
+    'NLW-img.png',
+    'Nlw-Setup-img.jpg',
+    'projeto-capsula-do-tempo-nlw-img.png',
+    'Projeto-pokemon-img.png',
+    'simpsons-project-img.png'
+  ]
   const [dataProject, setDataProject] = useState([])
   useEffect(() => {
     const fetchProjectsInfos = async () => {
@@ -26,7 +38,7 @@ const Projetos = () => {
   return (
     <ProjetosStyle id="projects">
       <h2>Projetos</h2>
-      <Card type="projetos" dataProject={dataProject}></Card>
+      <Card imgProject={imgProject} type="projetos" dataProject={dataProject}></Card>
     </ProjetosStyle>
   )
 }
