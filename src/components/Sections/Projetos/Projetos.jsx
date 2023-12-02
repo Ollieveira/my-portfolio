@@ -6,18 +6,26 @@ import Card from '../../Card'
 
 const Projetos = () => {
   const imgProject = [
-    'calculator-react-project-img.png',
-    'final-challenge-vnw-img.png',
-    'Mapadev-Week-img.png',
-    'Maratona-Explorer-img.png',
-    '' || "Not a Image",
-    'NLW-img.png',
-    'Nlw-Setup-img.jpg',
-    'projeto-capsula-do-tempo-nlw-img.png',
-    'Projeto-pokemon-img.png',
-    'simpsons-project-img.png'
+    'calculator-react-project-img.png' || 'Not a Image',
+    'final-challenge-vnw-img.png' || 'Not a Image',
+    'Mapadev-Week-img.png' || 'Not a Image',
+    'Maratona-Explorer-img.png' || 'Not a Image',
+    '' || 'Not a Image',
+    'NLW-img.png' || 'Not a Image',
+    'Nlw-Setup-img.jpg' || 'Not a Image',
+    'projeto-capsula-do-tempo-nlw-img.png' || 'Not a Image',
+    'Projeto-pokemon-img.png' || 'Not a Image',
+    'simpsons-project-img.png' || 'Not a Image'
   ]
   const [dataProject, setDataProject] = useState([])
+  const [showAllProjects, setShowAllProjects] = useState(false)
+  const displayProjects = showAllProjects
+    ? dataProject
+    : dataProject.slice(0, 3)
+
+  const handleClickShowMore = () => {
+    setShowAllProjects(!showAllProjects)
+  }
   useEffect(() => {
     const fetchProjectsInfos = async () => {
       const { data } = await axios.get(
@@ -38,7 +46,18 @@ const Projetos = () => {
   return (
     <ProjetosStyle id="projects">
       <h2>Projetos</h2>
-      <Card imgProject={imgProject} type="projetos" dataProject={dataProject}></Card>
+
+      <Card
+        imgProject={imgProject}
+        type="projetos"
+        dataProject={displayProjects}
+      ></Card>
+
+      {!showAllProjects ? (
+        <button onClick={handleClickShowMore}>Ver mais projetos</button>
+      ) : (
+        <button onClick={handleClickShowMore}>Ver menos</button>
+      )}
     </ProjetosStyle>
   )
 }

@@ -16,4 +16,9 @@ export const ProjetosStyle = styled.section`
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
   }
+
+  & button {
+    width: 100%;
+    margin-bottom: 100px;
+  }
 `
