@@ -10,7 +10,7 @@ const Projetos = () => {
     'final-challenge-vnw-img.png' || 'Not a Image',
     'Mapadev-Week-img.png' || 'Not a Image',
     'Maratona-Explorer-img.png' || 'Not a Image',
-    '' || 'Not a Image',
+    'my-portfolio.png' || 'Not a Image',
     'NLW-img.png' || 'Not a Image',
     'Nlw-Setup-img.jpg' || 'Not a Image',
     'projeto-capsula-do-tempo-nlw-img.png' || 'Not a Image',
