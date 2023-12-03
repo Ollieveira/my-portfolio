@@ -153,7 +153,7 @@ const Card = ({ imgProject, type, dataProject, data }) => {
           <CardStyle className={cardClass}>
             {imgProject[index] && (
               <Image
-                src={`my-portfolio/src/assets/${imgProject[index]}`}
+                src={`/my-portfolio/assets/${imgProject[index]}`}
                 alt={`img-project-${index}`}
                 width={296}
                 height={160}
