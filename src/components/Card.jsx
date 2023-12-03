@@ -46,6 +46,7 @@ const CardStyle = styled.div`
     color: #333;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
+    width: fit-content;
   }
 
   &.card-projeto .homepage-link:hover {
@@ -56,6 +57,7 @@ const CardStyle = styled.div`
     color: #000;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
+    width: fit-content;
   }
 
   &.card-projeto .github-icon-link:hover {
@@ -151,7 +153,7 @@ const Card = ({ imgProject, type, dataProject, data }) => {
           <CardStyle className={cardClass}>
             {imgProject[index] && (
               <Image
-                src={`src/assets/${imgProject[index]}`}
+                src={`my-portfolio/src/assets/${imgProject[index]}`}
                 alt={`img-project-${index}`}
                 width={296}
                 height={160}

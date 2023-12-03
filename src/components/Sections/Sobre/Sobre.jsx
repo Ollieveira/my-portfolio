@@ -15,17 +15,17 @@ const Sobre = () => {
         {
           nome: 'Desenvolvimento front-end',
           periodo: 'ABR/2023 - DEZ/2023',
-          icon: 'src/assets/vnw-icon.png'
+          icon: 'my-portfolio/src/assets/vnw-icon.png'
         },
         {
           nome: 'Trilha Especializar Discover',
           periodo: 'AGO/2023',
-          icon: 'src/assets/rocketseat-icon.png'
+          icon: 'my-portfolio/src/assets/rocketseat-icon.png'
         },
         {
           nome: 'Lógica de Programação',
           periodo: 'JUL/2019',
-          icon: 'src/assets/senai-icon.png'
+          icon: 'my-portfolio/src/assets/senai-icon.png'
         }
       ]
     },

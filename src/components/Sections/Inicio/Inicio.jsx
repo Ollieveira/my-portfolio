@@ -16,7 +16,7 @@ const Inicio = () => {
   return (
     <InicioStyle id="home">
       <Image
-        src="/my-portfolio/src/assets/perfil.png"
+        src="my-portfolio/src/assets/perfil.png"
         alt="Imagem-de-Perfil"
         width={221}
         height={222}
